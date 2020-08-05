@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+/*GENERAL*/
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Ubuntu Condensed',
+sans-serif;
+}
+
+/*link styles*/
+a {
+    text-decoration: none;
+}
+
+/*image styles*/
+img {
+    display: none;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (min-width: 769px) {
+    img {
+        display: inline-block;
+        width: 75%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 960px) {
+    img {
+        width: 75%;
+    }
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+header,
+footer {
+    color: white;
+    background: black;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+header a {
+    color: white;
+}
+
+header {
+        box-shadow: 0px  8px 8px gray;
+}
+
+/*have title take up whole line*/
+.nav-icon {
+    flex-basis: 100%;
+}
+
+@media (min-width: 769px) {
+
+    header {
+        justify-content: space-between;
+    }
+    
+    .nav-icon{
+        flex-basis: auto;
+    }
+    
+    h1 {
+        text-align: left;
+    }
+}
+
+/*END HEADER*/
+
+/*WELCOME PARAGRAPH*/
+.welcome {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: black 2px solid;
+}
+
+.welcome h2 {
+    margin-bottom: 0;
+}
+
+.welcome p {
+    margin-bottom: 30px;
+}
+@media (min-width: 769px) {
+    
+    .welcome {
+        align-items: center;
+    }
+    
+    .welcome h2 {
+        flex-basis: 100%;
+        text-align: center;
+}
+    .welcome p {
+        max-width: 400px;
+    }
+}
+/*END WELCOME PARAGRAPH*/
+
+
+/*
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+input {
+    font-size: 1em;
+    padding: .5em;
+}*/

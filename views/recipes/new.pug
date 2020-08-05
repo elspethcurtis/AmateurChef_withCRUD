@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    h2 New Recipe!
+    p Add a new recipe below
+  
+    form(action="/recipes", method="post" class="form")
+        div
+          label(for="name") Name:
+          input(type="text", name="name" value=recipe.name)
+        div
+          label(for="hours") Hours:
+          input(type="text", name="hours" value=recipe.hours)
+        div
+          label(for="minutes") Minutes
+          input(type="text", name="minutes" value=recipe.minutes)
+        div
+          label(for="ingredients") Ingredients:
+          input(type="textarea", name="ingredients" value=recipe.ingredients)
+        div
+          label(for="directions") Directions:
+          input(type="textarea", name="directions" value=recipe.directions)
+        div
+          label(for="category") category:
+          input(type="text", name="category" value=recipe.category)
+        input(type="submit")

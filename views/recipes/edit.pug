@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    h2 Edit Recipe
+    form(action=`/recipes/${recipe.id}/edit`, method="post")
+        div
+          label(for="name") Name:
+          input(type="text", name="name" value=recipe.name)
+        div
+          label(for="time") Time:
+          input(type="text", name="time" value=recipe.time)
+        div
+          label(for="ingredients") Ingredients:
+          input(type="text", name="ingredients" value=recipe.ingredients)
+        div
+          label(for="directions") Directions:
+          input(type="text", name="directions" value=recipe.directions)
+        div
+          label(for="category") category:
+          input(type="text", name="category" value=recipe.category)
+        input(type="submit")

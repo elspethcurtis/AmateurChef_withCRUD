@@ -1,0 +1,5 @@
+# Ignore databases #
+*.sql
+
+#Ignore nodemodules folder#
+node_modules/
