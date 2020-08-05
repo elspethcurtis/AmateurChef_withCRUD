@@ -21,15 +21,21 @@ router.get("/:id", (async (req, res) => {
 //Send a POST request to /recipes/ to add new recipe to db
 router.post('/', [
     //check for errors
-    check('name').not().isEmpty().withMessage('Name cannot be empty.')
-], (async (req, res) => {
-    const errors = validationResult(req);
-    console.log(req.body);
+    check('name').not().isEmpty().withMessage('Name cannot be empty.'),
+    check('hours').not().isEmpty().withMessage('Hours cannot be empty.')
+], 
+    //function to validate and submit form
+    (async (req, res, next) => {
+        //define errors
+        const errors = validationResult(req);
+//    console.log(req.body);
+    console.log(errors.array());
+        //if there are errors
         if (!errors.isEmpty()) {
-//            res.render('recipes/new');
-            return res.status(422).jsonp(errors.array());
-            res.render('recipes/new', {errors: errors})
-        } else {
+            //render the form again with the errors
+            return res.render('recipes/new', {errors:errors.array(), recipe: {}});
+        }
+    else {
             //if no errors add to db
             const recipe = await Recipe.create(req.body);
             res.redirect("/recipes/" + recipe.id);

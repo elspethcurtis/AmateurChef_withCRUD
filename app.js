@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//require body-parser to be able to access body of res
+const bodyParser = require('body-parser').json;
+
 //require express-validator to be able to refuse form submission when fields are blank
 const expressValidator= require('express-validator');
 
@@ -21,9 +24,14 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
+//this removes the need for body parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+//ask app to use body parser and express validator
+app.use(bodyParser());
+//app.use(expressValidator());
+
 //ask app to use public folder for styling
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));

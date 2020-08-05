@@ -3,6 +3,10 @@ extends ../layout
 block content
     h2 New Recipe!
     p Add a new recipe below
+    if(errors)
+            ul
+                each error in errors
+                    li= error.msg
   
     form(action="/recipes", method="post" class="form")
         div
@@ -24,3 +28,4 @@ block content
           label(for="category") category:
           input(type="text", name="category" value=recipe.category)
         input(type="submit")
+        
