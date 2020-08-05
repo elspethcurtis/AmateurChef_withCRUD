@@ -22,7 +22,11 @@ router.get("/:id", (async (req, res) => {
 router.post('/', [
     //check for errors
     check('name').not().isEmpty().withMessage('Name cannot be empty.'),
-    check('hours').not().isEmpty().withMessage('Hours cannot be empty.')
+    check('hours').not().isEmpty().withMessage('Hours cannot be empty.'),
+    check('minutes').not().isEmpty().withMessage('Minutes cannot be empty.'),
+    check('ingredients').not().isEmpty().withMessage('Ingredients cannot be empty.'),
+    check('directions').not().isEmpty().withMessage('Directions cannot be empty.'),
+    check('category').not().isEmpty().withMessage('Category cannot be empty.')
 ], 
     //function to validate and submit form
     (async (req, res, next) => {

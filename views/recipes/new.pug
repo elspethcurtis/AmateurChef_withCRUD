@@ -4,7 +4,7 @@ block content
     h2 New Recipe!
     p Add a new recipe below
     if(errors)
-            ul
+            ul(class="errors")
                 each error in errors
                     li= error.msg
   

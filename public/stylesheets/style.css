@@ -143,6 +143,15 @@ header {
     flex-basis: 100%;
 }
 
+/*CATEGORY*/
+
+
+/*MISC*/
+
+.errors{
+    color: red;
+}
+
 /*
 body {
   padding: 50px;
