@@ -116,6 +116,32 @@ header {
 }
 /*END WELCOME PARAGRAPH*/
 
+/*MAIN CONTENT */
+.main-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    flex:1;
+    color: black;
+}
+
+/*SECONDARY CONTENT*/
+.secondary-content {
+
+    padding: 0;
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: black 2px solid;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.secondary-content h3 {
+    flex-basis: 100%;
+}
 
 /*
 body {
