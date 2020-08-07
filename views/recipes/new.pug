@@ -1,8 +1,8 @@
 extends ../layout
 
 block content
-    h2(class="main-content") New Recipe!
-    p(class="main-content") Add a new recipe below
+    h2(class="new") New Recipe!
+    p(class="new") Add a new recipe below
     if(errors)
             ul(class="errors")
                 each error in errors
@@ -21,7 +21,7 @@ block content
               input(type="text", name="minutes" value=recipe.minutes)
             div
               label(for="ingredients") Ingredients:
-              input(type="textarea", name="ingredients" value=recipe.ingredients)
+              input(type="textarea", rows="10", cols="33", name="ingredients" value=recipe.ingredients)
             div
               label(for="directions") Directions:
               input(type="textarea", name="directions" value=recipe.directions)

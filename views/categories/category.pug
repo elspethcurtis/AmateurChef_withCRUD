@@ -3,11 +3,12 @@ extends ../layout
 block content
 
     h2 Category
-    div(class="main-content")
+    div(class="categories")
         each recipe in recipes
-            recipe(class='secondary-content')
-                h3= recipe.name
-                a(href=`/recipes/${recipe.id}`) See details
+            div
+                recipe(class="category-recipe")
+                    h3= recipe.name
+                    a(href=`/recipes/${recipe.id}`) See details
     br
     a(href="../categories") Back to categories
             

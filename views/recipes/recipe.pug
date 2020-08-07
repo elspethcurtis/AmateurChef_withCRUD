@@ -1,14 +1,11 @@
 extends ../layout
 
 block content
-    h2 Individual Recipe
-    div
-        h3=recipe.name
+    div(class="recipe")
+        h2=recipe.name
         p='Time to make: '+ recipe.hours + ' hrs ' + recipe.minutes + ' min'
         p='Ingredients:  '+ recipe.ingredients
-        p='Directions:  ' + recipe.directions
-    a(href=`${recipe.id}/edit`) Edit
-    br
-    a(href=`${recipe.id}/delete`) Delete
-    br
-    a(href=`../categories/${recipe.category}`) Back
+        p(class='directions')='Directions:  ' + recipe.directions
+        a(href=`${recipe.id}/edit`) Edit
+        a(href=`${recipe.id}/delete`) Delete
+        a(href=`../categories/${recipe.category}`) Back
