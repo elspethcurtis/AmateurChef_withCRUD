@@ -15,11 +15,12 @@ router.get('/:category', (async(req, res) => {
             category: req.params.category
         }
     });
-    if (recipes){
-        res.render("categories/category", {recipes: recipes, title: req.params.category});}
-    else {
+    
+    if (!recipes.length){
         res.sendStatus(404);
     }
+    
+    res.render("categories/category", {recipes: recipes, title: req.params.category});
 }));
 
 

@@ -170,6 +170,7 @@ header {
     justify-content: center;
     align-content: center;
     margin: 10px 20%;
+    flex: 1;
 }
 .form {
     flex:1;
@@ -194,7 +195,7 @@ header {
 /*    border: 1px black solid;*/
 }
 
-.form input {
+.form input, select {
     background: lightgray;
     border: none;
     padding: 2px;
@@ -202,8 +203,26 @@ header {
     border-radius: 5px;
 }
 
+@media(min-width:769px) {
+    .form input, select {
+        width:60%;
+    }
+}
+
 .form textarea{
-    height: auto;
+    background: lightgray;
+    border: none;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 5px;
+	white-space:pre-wrap;
+}
+
+@media(min-width: 769px) {
+    .form textarea{
+        width: 60%;
+        height: 100px;
+    }
 }
 
 /*NEW RECIPE*/
@@ -211,13 +230,25 @@ header {
     flex:1;
     margin: 5%;
     padding: 8px;
-    width: 65%;
+    width: 95%;
     border: 1px black solid;
+}
+
+@media(min-width:769px) {
+	.recipe{
+		width: 65%;
+	}
+}
+
+.ingredients{
+	/*preserves line breaks*/
+	white-space: pre-wrap;
 }
 
 .directions{
     padding-bottom: 10px;
     border-bottom: 1px black solid;
+	white-space: pre-wrap;
 }
 
 a{
@@ -226,16 +257,22 @@ a{
     background: lightgray;
     border-radius: 8px;
     color: black;
+	display: flex;
 }
 
 /*CATEGORIES*/
 
+.categoriesHeader{
+	margin: 20px 40px;
+}
+
 .categories{
     flex: 1;
-    margin:5%;
+    margin:0px 5%;
     padding:auto;
     flex-wrap: wrap;
     display: flex;
+	justify-content: center;
 }
 
 .categories div{
@@ -251,11 +288,30 @@ a{
     }
 }
 
+@media(min-width: 980px){
+	.categories div{
+		width: 23%;
+	}
+}
+/*EDIT*/
+
+.edit{
+    flex:1;
+}
+
+/*DELETE*/
+.delete{
+    flex:1;
+}
 
 /*MISC*/
 
 .errors{
     color: red;
+    border: 1px solid red;
+    margin: 0px 20%;
+    border-radius: 8px;
+    width: 30%;
 }
 
 /*

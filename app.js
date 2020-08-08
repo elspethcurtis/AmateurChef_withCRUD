@@ -9,6 +9,9 @@ var indexRouter = require('./routes/index');
 var recipesRouter = require('./routes/recipes');
 var categoriesRouter = require('./routes/categories');
 
+//for pictures 
+const fileUploader=require('express-fileupload');
+
 var app = express();
 
 // view engine setup
@@ -20,6 +23,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+//ask app to use fileUploader
+app.use(fileUploader({
+    createParentPath: true
+}));
 
 
 //ask app to use public folder for styling

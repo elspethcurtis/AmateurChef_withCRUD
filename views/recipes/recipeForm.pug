@@ -1,0 +1,31 @@
+
+block content
+
+	div(class="form-div")
+		//the enctype="multipart/form-data" allows me to add photos
+		form(action="/recipes", method="post" class="form" enctype="multipart/form-data")
+			div
+				label(for="name") Name:
+				input(type="text", name="name" value=recipe.name)
+			div
+				label(for="hours") Hours:
+				input(type="text", name="hours" value=recipe.hours)
+			div
+				label(for="minutes") Minutes:
+				input(type="text", name="minutes" value=recipe.minutes)
+			div
+				label(for="ingredients") Ingredients:
+				textarea(name="ingredients" value=recipe.ingredients)
+			div
+				label(for="directions") Directions:
+				textarea(name="directions" value=recipe.directions)
+			div
+				label(for="category") Category:
+				select(name="category" value=recipe.category)
+					each val in ['Breakfast', 'Dinner', 'Dessert', 'Sides', 'Cocktails']
+						option=val
+			div
+				label(for="image") Image:
+				input(type="file", name="photo", accept="image/png, image/jpeg" value=recipe.photo)
+			div
+				input(type="submit")
