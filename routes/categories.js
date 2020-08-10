@@ -15,9 +15,10 @@ router.get('/:category', (async(req, res) => {
             category: req.params.category
         }
     });
-    //if the array is empty (the category doesn't exist) show an error
+    //if the array is empty (the category doesn't exist or there aren't any items in the category) render the main categories page
     if (!recipes.length){
-		res.sendStatus(404);
+		res.render('categories/', {recipes:{}, title: "Recipes"});
+//		res.sendStatus(404);
     }
     
     res.render("categories/category", {recipes: recipes, title: req.params.category});
