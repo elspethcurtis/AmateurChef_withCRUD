@@ -3,14 +3,14 @@ extends ../layout
 block content
 	div(class="recipe")
 		h2=recipe.name
-			if(recipe.photo) 
-				img(src=`${recipe.photo}`)
-			h3 Time to make: 
-			p=recipe.hours + ' hrs ' + recipe.minutes + ' min'
-			h3 Ingredients:
-			p(class='ingredients')=recipe.ingredients
-			h3 Directions:
-			p(class='directions')=recipe.directions
-			a(href=`${recipe.id}/edit`) Edit
-			a(href=`${recipe.id}/delete`) Delete
-			a(href=`../categories/${recipe.category}`) Back
+		if(recipe.photo) 
+			img(src=`${recipe.photo}`)
+		h3 Time to make: 
+		p=recipe.hours + ' hrs ' + recipe.minutes + ' min'
+		h3 Ingredients:
+		p(class='ingredients')=recipe.ingredients
+		h3 Directions:
+		p(class='directions')=recipe.directions
+		a(href=`${recipe.id}/edit`) Edit
+		a(href=`${recipe.id}/delete`) Delete
+		a(href=`../categories/${recipe.category}`) Back
