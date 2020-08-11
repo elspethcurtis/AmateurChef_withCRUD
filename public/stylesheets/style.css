@@ -207,6 +207,8 @@ header {
     padding: 5%;
     border: 1px black solid;
     border-radius: 8px;
+	font-family: 'Ubuntu Condensed',
+sans-serif;
 }
 
 .form div{
@@ -218,12 +220,15 @@ header {
 /*    border: 1px black solid;*/
 }
 
-.form input, select {
+.form input, select,
+#file-upload-button{
     background: lightgray;
     border: none;
     padding: 2px;
     margin: 2px;
     border-radius: 5px;
+	font-family: 'Ubuntu Condensed',
+sans-serif;
 }
 
 .form label, 
@@ -245,6 +250,8 @@ header {
     margin: 2px;
     border-radius: 5px;
 	white-space:pre-wrap;
+	font-family: 'Ubuntu Condensed',
+sans-serif; 
 }
 
 @media(min-width: 769px) {
@@ -265,7 +272,11 @@ header {
 
 @media(min-width:769px) {
 	.recipe{
-		width: 65%;
+		width: 75%;
+	}
+	
+	.recipe img{
+		width: 30%;
 	}
 }
 
@@ -296,7 +307,6 @@ a{
 }
 
 .categories{
-    flex: 1;
     margin:0px 5%;
     padding:15px;
     flex-wrap: wrap;
@@ -307,7 +317,7 @@ a{
 .categories div{
     width: 45%;
     border: 1px black solid;
-    margin: 5px;
+    margin: auto;
     padding: 8px;
 	justify-content: center;
 	display: flex;
@@ -325,11 +335,13 @@ a{
 .return{
 	width: 25%;
 	justify-content: center;
+	flex: 1;
 }
 
 @media (min-width: 769px){
     .categories div{
         width: 30%;
+		margin: 10px;
     }
 }
 

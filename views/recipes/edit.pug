@@ -2,4 +2,9 @@ extends ../layout
 
 block content
     h2 Edit Recipe
-    include recipeForm.pug
+    
+    //the enctype="multipart/form-data" allows me to add photos
+    div(class="form-div")
+        form(action=`/recipes/${recipe.id}/edit`, method="post" class="form" enctype="multipart/form-data")
+            include recipeForm.pug    
+            p **Please include new photo if you wish to change, otherwise it will remain the current photo.			

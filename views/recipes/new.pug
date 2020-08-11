@@ -8,5 +8,8 @@ block content
                 each error in errors
                     li= error.msg
   
-    include recipeForm.pug
+    //the enctype="multipart/form-data" allows me to add photos
+    div(class="form-div")
+        form(action="/recipes", method="post" class="form" enctype="multipart/form-data")
+            include recipeForm.pug
         

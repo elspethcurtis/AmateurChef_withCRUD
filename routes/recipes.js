@@ -37,7 +37,9 @@ router.post('/', [
         .isInt().withMessage('Minutes should be a number'),
     check('ingredients').not().isEmpty().withMessage('Ingredients cannot be empty.'),
     check('directions').not().isEmpty().withMessage('Directions cannot be empty.'),
-    check('category').not().isEmpty().withMessage('Category cannot be empty.')
+    check('category').not()
+		.isEmpty().withMessage('Category cannot be empty.').bail()
+		.optional().isIn(['Breakfast', 'Dinner', 'Dessert', 'Sides', 'Cocktails']).withMessage('Category does not exist.')
 ],
 	//function to validate and submit form
 	(async (req, res, next) => {
@@ -73,8 +75,10 @@ router.post('/', [
 	}));
 
 //Send a GET request to recipes/:id/edit to edit/update recipe
-router.get("/:id/edit", (async (req, res) => {
+router.get("/:id/edit", (async (req, res, next) =>{
 	const recipe = await Recipe.findByPk(req.params.id);
+	console.log(recipe.category);
+	console.log(recipe.photo)
 	res.render("recipes/edit", {
 		recipe: recipe,
 		title: "Edit Recipe"
@@ -82,7 +86,8 @@ router.get("/:id/edit", (async (req, res) => {
 }))
 
 //Send a POST request to /recipes/:id/edit to update recipe
-router.post('/:id/edit', [
+router.post('/:id/edit', 
+[
 //    check for errors
     check('name').not().isEmpty().withMessage('Name cannot be empty.'),
     check('hours').not()
@@ -106,9 +111,24 @@ router.post('/:id/edit', [
 				recipe: req.body
 			});
 		}
+	
+			let body = req.body;
+		//look to see if there are files attached to the form
+		if (req.files) {
+			const photo = req.files.photo;
+			//define route for where photo is to be saved
+			const photoRoute = `./public/images/${photo.name}`;
+			//save the image to the images folder
+			photo.mv(photoRoute);
+			//add photo route to recipe object to be added to db - note that it is different from the route to be saved (doesn't include the ./public)
+			body.photo = `/images/${photo.name}`;
+		}
+
+
 	//if no errors add to db
 		const recipe = await Recipe.findByPk(req.params.id);
 		await recipe.update(req.body);
+		console.log(req.body);
 		res.redirect('/recipes/' + recipe.id);
 	}));
 

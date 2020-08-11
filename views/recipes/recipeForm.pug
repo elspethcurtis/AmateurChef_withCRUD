@@ -1,9 +1,6 @@
 
 block content
 
-	div(class="form-div")
-		//the enctype="multipart/form-data" allows me to add photos
-		form(action="/recipes", method="post" class="form" enctype="multipart/form-data")
 			div
 				label(for="name") Name:
 				input(type="text", name="name" value=recipe.name)
@@ -15,17 +12,23 @@ block content
 				input(type="text", name="minutes" value=recipe.minutes)
 			div
 				label(for="ingredients") Ingredients:
-				textarea(name="ingredients" value=recipe.ingredients)
+				textarea(name="ingredients")=recipe.ingredients
 			div
 				label(for="directions") Directions:
-				textarea(name="directions" value=recipe.directions)
+				textarea(name="directions")=recipe.directions
 			div
 				label(for="category") Category:
-				select(name="category" value=recipe.category)
-					each val in ['Breakfast', 'Dinner', 'Dessert', 'Sides', 'Cocktails']
-						option=val
+				select(name="category" id="category")
+					option Select from below options
+					//This allows me to return the selected category in the edit view
+					option(value='Breakfast',  selected=recipe.category=='Breakfast') Breakfast
+					option(value='Dinner', selected=recipe.category=='Dinner') Dinner
+					option(value='Dessert', selected=recipe.category=='Dessert') Dessert
+					option(value='Sides', selected=recipe.category=='Sides') Sides
+					option(value='Cocktails', selected=recipe.category=='Cocktails') Cocktails
+					
 			div
-				label(for="image") Image:
-				input(type="file", name="photo", accept="image/png, image/jpeg" value=recipe.photo)
+				label(for="photo") Image:
+				input(type="file", name="photo", accept="image/png, image/jpeg", value=recipe.photo)
 			div
 				input(type="submit")
