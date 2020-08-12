@@ -1,21 +1,21 @@
 ##Pre-Requisites: 
-*A package Installer
-	*Mac: Homebrew
-	*WIndows: Chocolatey
-*Download and install MAMP 
-	*https://www.mamp.info/
-*Download and install database GUI: 
-	*Mac
-		*heidisql 
-			*Using Chocolatey: choco install heidisql
-			*Alt - download from heidisql or app store
-	*Windows
-		*Sequel Pro
-			*Using homebrew: brew cask install sequel-pro
-*Install Node.js
-	*https://nodejs.org/en/
-*Download Git Repo 
-	*https://github.com/elspethcurtis/AmateurChef_withCRUD
+* A package Installer
+	* Mac: Homebrew
+	* WIndows: Chocolatey
+* Download and install MAMP 
+	* https://www.mamp.info/
+* Download and install database GUI: 
+	* Mac
+		* heidisql 
+			* Using Chocolatey: choco install heidisql
+			* Alt - download from heidisql or app store
+	* Windows
+		* Sequel Pro
+			* Using homebrew: brew cask install sequel-pro
+* Install Node.js
+	* https://nodejs.org/en/
+* Download Git Repo 
+	* https://github.com/elspethcurtis/AmateurChef_withCRUD
 
 
 **Steps to get project up and running: 
