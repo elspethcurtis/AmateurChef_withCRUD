@@ -26,7 +26,7 @@
 	1. Type in username and password to match MAMP and config file. 
 	1. Import db file.
 		1. Sequel Pro - Create database named fsjs_project, then choose 'Import...' from the File menu. This will bring up a dialog box, select the db.sql file, then choose SQL from the "Format:" drop down menu and click "Open". Your database will now be updated. Click the Table refresh button if needed.
-		1. HeidiSQL - click file -> Load Sql File (choose db.sql)
+		1. HeidiSQL - click file -> Run Sql File (choose db.sql)
 1. Using Git Bash or terminal navigate to project folder. 
 1. Install project dependencies. 
 	1. Command: npm install
