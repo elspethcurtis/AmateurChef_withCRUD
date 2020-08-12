@@ -1,5 +1,5 @@
 ## Pre-Requisites: 
-* A package Installer
+* Download and install a package installer
 	* Mac: Homebrew
 		* https://brew.sh/
 	* WIndows: Chocolatey
@@ -7,27 +7,29 @@
 * Download and install MAMP 
 	* https://www.mamp.info/
 * Download and install database GUI: 
-	* Mac
+	* Windows
 		* heidisql 
 			* Using Chocolatey: choco install heidisql
-			* Alt - download from heidisql or app store
-	* Windows
+			* Alternatively, download from heidisql.com or app store
+	* Mac
 		* Sequel Pro
 			* Using homebrew: brew cask install sequel-pro
 * Install Node.js
 	* https://nodejs.org/en/
 * Download Git Repo 
-	* https://github.com/elspethcurtis/AmateurChef_withCRUD
 
 
 ## Steps to get project up and running: 
-1. Open and run MAMP. Click the Open WebStart page. Make sure that the username and password match the username and password in the config.json file → config/config.json. 
+1. Open and run MAMP. Click the Open WebStart page. Make sure that the username and password match the username and password in the config.json file → config/config.json. Also, if your localhost is different than 127.0.0.1 adjust that in the config file.
 1. Open database GUI. 
 	1. Type in whatever name you choose for your session. 
 	1. Type in username and password to match MAMP and config file. 
+	1. Import db file.
+		1. Sequel Pro - Create database named fsjs_project, then choose 'Import...' from the File menu. This will bring up a dialog box, select the db.sql file, then choose SQL from the "Format:" drop down menu and click "Open". Your database will now be updated. Click the Table refresh button if needed.
+		1. HeidiSQL - click file -> Load Sql File (choose db.sql)
 1. Using Git Bash or terminal navigate to project folder. 
 1. Install project dependencies. 
-	1. Command: 
+	1. Command: npm install
 1. Start application. 
 	1. Command: npm start
 1. In your browser navigate to localhost:3000
