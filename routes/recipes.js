@@ -45,7 +45,6 @@ router.post('/', [
 	(async (req, res, next) => {
 		//define errors
 		const errors = validationResult(req);
-		//    console.log(req.body);
 		console.log(req.body);
 		//if there are errors
 		if (!errors.isEmpty()) {
@@ -147,7 +146,5 @@ router.post("/:id/delete", (async (req, res) => {
 	await recipe.destroy();
 	res.redirect("/categories");
 }));
-
-//DELETE/Destroy recipe
 
 module.exports = router;

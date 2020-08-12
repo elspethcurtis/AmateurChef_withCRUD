@@ -24,7 +24,6 @@ router.get('/:category', (async (req, res) => {
 			recipes: {},
 			title: "Recipes"
 		});
-		//		res.sendStatus(404);
 	}
 
 	res.render("categories/category", {
