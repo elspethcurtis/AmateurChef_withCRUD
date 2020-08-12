@@ -20,7 +20,7 @@
 	* https://github.com/elspethcurtis/AmateurChef_withCRUD
 
 
-** Steps to get project up and running: 
+## Steps to get project up and running: 
 1. Open and run MAMP. Click the Open WebStart page. Make sure that the username and password match the username and password in the config.json file → config/config.json. 
 2. Open database GUI. 
 	2. Type in whatever name you choose for your session. 
