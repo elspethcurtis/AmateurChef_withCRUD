@@ -20,13 +20,18 @@
 
 
 ## Steps to get project up and running: 
-1. Open and run MAMP. Click the Open WebStart page. Make sure that the username and password match the username and password in the config.json file → config/config.json. Also, if your localhost is different than 127.0.0.1 adjust that in the config file.
-1. Open database GUI. 
-	1. Type in whatever name you choose for your session. 
-	1. Type in username and password to match MAMP and config file. 
-	1. Import db file.
-		1. Sequel Pro - Create database named fsjs_project, then choose 'Import...' from the File menu. This will bring up a dialog box, select the db.sql file, then choose SQL from the "Format:" drop down menu and click "Open". Your database will now be updated. Click the Table refresh button if needed.
-		1. HeidiSQL - click file -> Run Sql File (choose db.sql)
+1. Open MAMP, click start server if does not start automatically. Click the Open WebStart page. Make sure that the username, password  and port number match the username, password and port number in the config.json file → config/config.json. Also, if your localhost is different than 127.0.0.1 adjust that in the config file. 
+1. Open database GUI.(Sequel Pro or HeidiSql)
+	1. Sequel Pro choose quick connect
+		1. Type in whatever name you choose for your session. 
+		1. Type in username and password to match MAMP and config file. 
+		1. Import db file.
+			1. Create database named fsjs_project, then choose 'Import...' from the File menu. This will bring up a dialog box, select the db.sql file, then choose SQL from the "Format:" drop down menu and click "Open". Your database will now be updated. Click the Table refresh button if needed.
+	1. HeidiSQL 
+		1. Type in whatever name you choose for your session. 
+		1. Type in username and password to match MAMP and config file. 
+		1. Import db file.
+			1. HeidiSQL - click file -> Run Sql File (choose db.sql)
 1. Using Git Bash or terminal navigate to project folder. 
 1. Install project dependencies. 
 	1. Command: npm install
