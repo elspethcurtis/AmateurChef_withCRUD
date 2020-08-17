@@ -22,8 +22,10 @@
 ## Steps to get project up and running: 
 1. Open MAMP, click start server if does not start automatically. Click the Open WebStart page. Make sure that the username, password  and port number match the username, password and port number in the config.json file → config/config.json. Also, if your localhost is different than 127.0.0.1 adjust that in the config file. 
 1. Open database GUI.(Sequel Pro or HeidiSql)
-	1. Sequel Pro choose quick connect
-		1. Type in whatever name you choose for your session. 
+	1. Sequel Pro
+		1. Choose quick connect
+		1. Type in whatever name you choose for your session name. 
+		1. Change connection type to socket.
 		1. Type in username and password to match MAMP and config file. 
 		1. Import db file.
 			1. Create database named fsjs_project, then choose 'Import...' from the File menu. This will bring up a dialog box, select the db.sql file, then choose SQL from the "Format:" drop down menu and click "Open". Your database will now be updated. Click the Table refresh button if needed.
